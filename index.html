@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Modern Page</title>
+    <style>
+        /* CSS: Styling for a modern look */
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --accent: #4a90e2;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background 0.5s ease;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Hello!</h1>
+        <p id="message">Click the button to change the vibe.</p>
+        <button onclick="changeStyle()">Change Theme</button>
+    </div>
+
+    <script>
+        // JavaScript: Adding interactivity
+        function changeStyle() {
+            const colors = ['#e24a4a', '#4ae26c', '#e2d54a', '#4a90e2'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.body.style.backgroundColor = randomColor;
+            document.getElementById('message').innerText = "Vibe updated!";
+        }
+    </script>
+</body>
+</html>
